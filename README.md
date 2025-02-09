@@ -39,3 +39,15 @@ Pour démarrer le serveur, utilisez la commande suivante :
 ```bash
     npm start
 ```
+### Changement de version 
+Pour accéder à la version 1:
+
+```bash
+    git checkout v1
+```
+
+Pour accéder à la version 2:
+
+```bash
+    git checkout v2
+```
