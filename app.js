@@ -120,41 +120,6 @@ app.delete("/produits/:id", async (req, res) => {
     }
 });
 
-    
-    // Routes categories
-           app.get("/categories", async (req, res) => {
-        const [result] = await connection.query("SELECT * FROM categories");
-        res.json(result);
-      });
-    
-      app.get("/categories/:id", async (req, res) => {
-        const [result] = await connection.query(
-          `SELECT * FROM categories WHERE id_categorie = ${req.params.id}`
-        );
-        res.json(result);
-      });
-    
-      app.post("/categories", async (req, res) => {
-        const { nom } = req.body;
-        await connection.query(`INSERT INTO categories (nom) VALUES ('${nom}')`);
-        res.json({ message: "Catégorie ajoutée" });
-      });
-    
-      app.put("/categories/:id", async (req, res) => {
-        const { nom } = req.body;
-        await connection.query(
-          `UPDATE categories SET nom = '${nom}' WHERE id_categorie = ${req.params.id}`
-        );
-        res.json({ message: "Catégorie mise à jour" });
-      });
-    
-      app.delete("/categories/:id", async (req, res) => {
-        await connection.query(
-          `DELETE FROM categories WHERE id_categorie = ${req.params.id}`
-        );
-        res.json({ message: "Catégorie supprimé" });
-      });
-
     // Routes categories
      app.get("/categories", async (req, res) => {
     try {
