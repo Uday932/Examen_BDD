@@ -1,6 +1,6 @@
 USE usinepapier;
 
-INSERT INTO categories (nom_categorie) VALUES 
+INSERT INTO categories (nom) VALUES 
 ('Avion'),
 ('Hélicoptère'),
 ('Dirigeable'),
@@ -26,39 +26,55 @@ INSERT INTO fournisseurs (nom, contact, adresse) VALUES
 ('Fournisseur J', 'contactJ@fournisseur.com', '10 rue des Artisans, Montpellier');
 
 
-INSERT INTO produits (nom, description, prix_unitaire, quantite_stock, id_categorie, id_fournisseur) VALUES 
-('Concorde', 'Maquette du mythique Concorde.', 89.99, 10, 1, 1),
-('Mirage 2000', 'Modèle réduit du chasseur français Mirage 2000.', 45.99, 25, 2, 2),
-('Black Hawk', 'Réplique détaillée de l’hélicoptère UH-60 Black Hawk.', 54.99, 20, 3, 3),
-('Boeing C-17 Globemaster', 'Maquette de l’avion de transport militaire C-17.', 74.99, 15, 1, 4),
-('Lockheed U-2', 'Modèle de l’avion espion U-2.', 65.99, 12, 2, 5),
-('Zeppelin LZ 129 Hindenburg', 'Maquette du dirigeable allemand Hindenburg.', 99.99, 8, 3, 6),
-('Hydravion PBY Catalina', 'Modèle réduit de l’hydravion militaire PBY Catalina.', 69.99, 14, 4, 7),
-('Extra 330SC', 'Maquette de l’avion de voltige Extra 330SC.', 49.99, 18, 5, 8),
-('Wright Flyer', 'Réplique du premier avion des frères Wright.', 79.99, 6, 6, 9),
-('Futur Jet X-1', 'Concept d’avion du futur.', 109.99, 4, 7, 10),
-('Model 3', 'Maquette du véhicule électrique Tesla Model 3.', 150.99, 5, 8, 1),
-('Ferrari F8', 'Réplique de la Ferrari F8 Tributo.', 120.00, 8, 9, 2),
-('Chevrolet Camaro', 'Modèle réduit de la Chevrolet Camaro.', 110.50, 7, 9, 3),
-('Volkswagen Golf', 'Modèle de la voiture compacte Volkswagen Golf.', 95.75, 10, 8, 4),
-('Submarine 2020', 'Maquette d’un sous-marin moderne.', 190.00, 3, 10, 5),
-('Yacht de luxe', 'Modèle d’un yacht de luxe moderne.', 210.00, 6, 6, 1),
-('Cargo Train', 'Modèle réduit d’un train de marchandises.', 150.00, 4, 9, 2),
-('Harley Davidson', 'Réplique d’une moto Harley Davidson.', 180.00, 12, 5, 3),
-('Electric Bike', 'Vélo électrique de nouvelle génération.', 250.00, 8, 10, 4);
+INSERT INTO produits (reference, nom, prix_unitaire, quantite, id_categorie, id_fournisseur) VALUES 
+('CONC001', 'Concorde', 89.99, 10, 1, 1),
+('MIR2000', 'Mirage 2000', 45.99, 25, 2, 2),
+('BLKH001', 'Black Hawk', 54.99, 20, 3, 3),
+('BOE-C17', 'Boeing C-17 Globemaster', 74.99, 15, 1, 4),
+('LCK-U2', 'Lockheed U-2', 65.99, 12, 2, 5),
+('ZEP-LZ129', 'Zeppelin LZ 129 Hindenburg', 99.99, 8, 3, 6),
+('PBY-CAT', 'Hydravion PBY Catalina', 69.99, 14, 4, 7),
+('EXT-330', 'Extra 330SC', 49.99, 18, 5, 8),
+('WRT-FLY', 'Wright Flyer', 79.99, 6, 6, 9),
+('FJX-001', 'Futur Jet X-1', 109.99, 4, 7, 10),
+('MOD-003', 'Model 3', 150.99, 5, 8, 1),
+('FER-F8', 'Ferrari F8', 120.00, 8, 9, 2),
+('CHE-CAM', 'Chevrolet Camaro', 110.50, 7, 9, 3),
+('VW-GOLF', 'Volkswagen Golf', 95.75, 10, 8, 4),
+('SUB-2020', 'Submarine 2020', 190.00, 3, 10, 5),
+('YAC-LUX', 'Yacht de luxe', 210.00, 6, 6, 1),
+('CRG-TRN', 'Cargo Train', 150.00, 4, 9, 2),
+('HD-MOTO', 'Harley Davidson', 180.00, 12, 5, 3),
+('ELE-BIKE', 'Electric Bike', 250.00, 8, 10, 4);
 
+INSERT INTO fournisseurs_produits (id_produit, id_fournisseur, prix_achat) VALUES
+(1, 1, 80.00),   
+(2, 2, 40.00),   
+(3, 3, 50.00),   
+(4, 4, 70.00),    
+(5, 5, 60.00),   
+(6, 6, 90.00),   
+(7, 7, 65.00),   
+(8, 8, 45.00), 
+(9, 9, 75.00),  
+(10, 10, 100.00), 
+(11, 1, 140.00),  
+(12, 2, 115.00), 
+(13, 3, 105.00),  
+(14, 4, 90.00), 
+(15, 5, 180.00);
 
-INSERT INTO clients (nom, email, telephone, adresse) VALUES 
-('Jean Marie', 'jean.marie@example.com', '123456789', '10 rue de Paris, Paris'),
-('Marie Martin', 'marie.martin@example.com', '987654321', '15 avenue des Champs, Lyon'),
-('Pierre Dupuis', 'pierre.dupuis@example.com', '567892345', '22 rue de la République, Marseille'),
-('Lucie Robert', 'lucie.robert@example.com', '876543210', '30 rue des Tilleuls, Bordeaux'),
-('Paul Petit', 'paul.petit@example.com', '234567890', '40 avenue des Alpes, Toulouse'),
-('Sophie Lefevre', 'sophie.lefevre@example.com', '345678901', '50 boulevard du Mont Blanc, Nice'),
-('Catherine Lemoine', 'catherine.lemoine@example.com', '456789012', '60 place de la Gare, Lille'),
-('Michel Martin', 'michel.martin@example.com', '567890123', '70 rue de l’Église, Nantes'),
-('Claire Lefevre', 'claire.lefevre@example.com', '678901234', '80 avenue de la Mer, Marseille'),
-('Bernard Dufresne', 'bernard.dufresne@example.com', '789012345', '90 rue de la Paix, Paris');
+INSERT INTO clients (nom, email, adresse) VALUES 
+('Jean Marie', 'jean.marie@example.com','10 rue de Paris, Paris'),
+('Marie Martin', 'marie.martin@example.com', '15 avenue des Champs, Lyon'),
+('Pierre Dupuis', 'pierre.dupuis@example.com', '22 rue de la République, Marseille'),
+('Lucie Robert', 'lucie.robert@example.com',  '30 rue des Tilleuls, Bordeaux'),
+('Paul Petit', 'paul.petit@example.com','40 avenue des Alpes, Toulouse'),
+('Sophie Lefevre', 'sophie.lefevre@example.com', '50 boulevard du Mont Blanc, Nice'),
+('Catherine Lemoine', 'catherine.lemoine@example.com', '60 place de la Gare, Lille'),
+('Michel Martin', 'michel.martin@example.com',  '70 rue de l’Église, Nantes'),
+('Claire Lefevre', 'claire.lefevre@example.com', '80 avenue de la Mer, Marseille'),
+('Bernard Dufresne', 'bernard.dufresne@example.com','90 rue de la Paix, Paris');
 
 
 INSERT INTO commandes (id_client, total_prix) VALUES 
@@ -83,13 +99,4 @@ INSERT INTO lignes_commandes (id_commande, id_produit, quantite, prix_unitaire) 
 (3, 7, 2, 69.99),
 (3, 8, 1, 49.99),
 (3, 9, 1, 79.99),
-(4, 10, 1, 109.99),
-(5, 11, 1, 150.99),
-(5, 12, 1, 120.00),
-(6, 13, 1, 110.50),
-(6, 14, 1, 95.75),
-(7, 15, 1, 190.00),
-(7, 16, 1, 210.00),
-(8, 17, 2, 150.00),
-(9, 18, 1, 180.00),
-(10, 19, 1, 250.00);
+(4, 10, 1, 109.99);
